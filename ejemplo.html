@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>Página para probar apis</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap-table.min.css" />
+
+    <script type="text/javascript" src="jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="bootstrap.js"></script>
+    <script type="text/javascript" src="bootstrap-table.min.js"></script>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $('#tabla-datos').bootstrapTable({
+                columns: [
+                    {
+                        field: "idproducto",
+                        title: "ID"
+                    },
+                    {
+                        field: "nomproducto",
+                        title: "Producto"
+                    },
+                    {
+                        field: "stockcritico",
+                        title: "Stock Crítico"
+                    },
+                    {
+                        field: "familia.nomfamilia",
+                        title: "Familia"
+                    }
+                ],
+                url: "http://api.clavodegoma.tk/producto"
+            });
+            
+        });
+    </script>
+
+    <div class=container-fluid>
+        <div class="row">
+            <div id="contenido" class="col-md-12">
+                <table id="tabla-datos" class="table table-sm table-condensed table-striped table-bordered table-hover"></table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
